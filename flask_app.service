@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 WorkingDirectory=/Пользователи/Катя/app
-ExecStart=/Пользователи/Катя/app/venv/bin/python run.py
+ExecStart=/Пользователи/Катя/app/venv/bin/python -m gunicorn run:app -b 0.0.0.0:8080 -w 4
 
 [Install]
 WantedBy=multi-user.target
